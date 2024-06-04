@@ -1,0 +1,16 @@
+{% extends 'menu.html' %}
+{% load crispy_forms_tags %}
+{% block 'body' %}
+
+<br>
+<form action="{% url 'menu:addur' %}" method="POST">
+    <table>
+      {{deli|crispy}}
+      </table>
+    <br>
+    <button name="login" class="btn btn-primary" value="Login" formnovalidate>login</button>
+{% csrf_token %}
+
+</form>
+
+{%endblock%}

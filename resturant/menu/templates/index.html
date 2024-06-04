@@ -1,0 +1,19 @@
+{% extends 'menu.html' %}
+{% block 'body' %}
+<form action="{% url 'menu:homepage' %}" method="POST">
+<table class="table table-border table-striped table-hover">
+    <thead><tr><th>name</th><th>address</th><th>operations</th></tr></thead>
+
+{%for b in foods%}
+
+
+    <tr> <td>{{ b.name }}</td><td>{{ b.adress }}</td><td><button name="delete" value="{{ b.bid}}">delete</button></td>
+        {%endfor%}
+    </tr>
+<a href="{% url 'menu:addur' %}" >add to menu </a>
+
+</table>
+    {%csrf_token%}
+</form>
+
+{%endblock%}

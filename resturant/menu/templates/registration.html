@@ -1,0 +1,17 @@
+{% extends 'menu.html' %}
+{% load crispy_forms_tags %}
+{% block 'body' %}
+
+<a href="{% url 'menu:homepage' %}" >home page </a>
+<br>
+<form action="{% url 'menu:addur' %}" method="POST">
+    <table>
+      {{deli|crispy}}
+      </table>
+    <br>
+    <button name="register">register</button>
+{% csrf_token %}
+
+</form>
+
+{%endblock%}
